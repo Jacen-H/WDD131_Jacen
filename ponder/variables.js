@@ -1,7 +1,7 @@
 
 // declare a variable
 let x = 5;
-let age = 23, name = "John Doe";
+let age = 22, name = "John Doe";
 let uyguguyguyguygyuguyguyguyguyguyguyg 
 = 1;
 
@@ -24,3 +24,8 @@ if(age == 22)
 // This won't work, because favoriteColor is defined in a smaller scope.
 
 document.querySelector("h1").style.color = "blue";
+
+const one = 1;
+const two = "2";
+
+console.log(one + two);
