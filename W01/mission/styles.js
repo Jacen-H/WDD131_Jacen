@@ -32,7 +32,6 @@ listItems.forEach(function(item)
     item.style.marginBottom = "10px";
 });
 
-
 let selectElem = document.querySelector('select');
 let logo = document.querySelector('img');
 
@@ -45,6 +44,7 @@ function changeTheme() {
         body.style.backgroundColor = "#1a1a1a";
         body.style.color = "#f0f0f0";
         logo.setAttribute('src', 'byui-logo_dark.png');
+    } else {
         body.style.backgroundColor = "#f9f9f9";
         body.style.color = "#333333";
         logo.setAttribute('src', 'byui-logo.png');
