@@ -11,8 +11,8 @@ let heading = document.querySelector("h1");
 heading.style.color = "#002e5d";
 heading.style.fontSize = "1.8rem";
 heading.style.marginBottom = "15px";
-let headings = document.querySelectorAll("h2");
 
+let headings = document.querySelectorAll("h2");
 headings.forEach(function(heading) 
 {
     heading.style.color = "#002e5d";
@@ -21,14 +21,12 @@ headings.forEach(function(heading)
 });
 
 let lists = document.querySelectorAll("ul");
-
 lists.forEach(function(list) 
 {
     list.style.paddingLeft = "20px";
 });
 
 let listItems = document.querySelectorAll("li");
-
 listItems.forEach(function(item) 
 {
     item.style.marginBottom = "10px";
@@ -42,10 +40,13 @@ selectElem.addEventListener('change', changeTheme);
 
 function changeTheme() {
     let current = selectElem.value;
+    
     if (current == 'dark') {
-        // code for changes to colors and logo
-    } else {
-        // code for changes to colors and logo
+        body.style.backgroundColor = "#1a1a1a";
+        body.style.color = "#f0f0f0";
+        logo.setAttribute('src', 'byui-logo_dark.png');
+        body.style.backgroundColor = "#f9f9f9";
+        body.style.color = "#333333";
+        logo.setAttribute('src', 'byui-logo.png');
     }
-}           
-                    
+}
