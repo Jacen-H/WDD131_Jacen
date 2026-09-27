@@ -43,10 +43,12 @@ function changeTheme() {
     if (current == 'dark') {
         body.style.backgroundColor = "#1a1a1a";
         body.style.color = "#f0f0f0";
-        logo.setAttribute('src', 'byui-logo_dark.png');
+        heading.style.color = "#a1a1a1ff";
+        logo.setAttribute('src', 'byui-logo-dark.png');
     } else {
         body.style.backgroundColor = "#f9f9f9";
         body.style.color = "#333333";
+        heading.style.color = "#002e5d";
         logo.setAttribute('src', 'byui-logo.png');
     }
 }
