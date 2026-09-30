@@ -47,8 +47,38 @@ footer {
 }
 
 @media (min-width: 600px) {
+    /*
+    The nav{} with flex wasn't working for me, 
+    and it made the links disappear completely
+    So I stuck with nav a{} and inline-block instead
+    */
     nav a{
         display: inline-block;
-        
+        justify-content: end;
+    }
+
+    .menu-btn{
+        display: none;
+    }
+
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    section{
+        max-width: 40%;
+    }
+}
+
+@media (min-width: 1000px) {
+    section{
+        max-width: 25%
+    }
+
+    main{
+        justify-content: center;
+        flex-wrap: nowrap;
     }
 }
