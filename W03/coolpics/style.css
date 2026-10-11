@@ -25,6 +25,18 @@ nav.hide {
     display: none;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
 main {
     padding: 1rem;
     text-align: center;
@@ -44,6 +56,64 @@ main {
     object-fit: cover;
     border: 5px solid white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.02);
+}
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.viewer.hide {
+    display: none;
+}
+
+.viewer-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewer img {
+    max-width: 85vw;
+    max-height: 80vh;
+    border: 5px solid white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    object-fit: contain;
+}
+
+.close-viewer {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0.5rem;
+}
+
+.close-viewer:hover {
+    color: #cbd5e1;
 }
 
 footer {
@@ -55,16 +125,19 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
     nav.hide {
-        display: flex;
+        display: flex !important;
+    }
+
+    nav {
+        flex-direction: row;
         justify-content: center;
         gap: 1.5rem;
         margin-top: 1rem;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
     }
 
     .gallery {
