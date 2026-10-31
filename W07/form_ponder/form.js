@@ -34,7 +34,7 @@ function getSelectedCampuses() {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   output.textContent = "";
-
+  console.log(event.target.email.value);
   const firstName = form.firstName.value.trim();
   const lastName = form.lastName.value.trim();
   const email = form.email.value.trim();
@@ -45,7 +45,13 @@ form.addEventListener("submit", function (event) {
 
   // Validate the input
   // Let the user know to select at least one campus
+  if(selectedCampuses.length == 0) {
+    output.textContent = "You need to select one campus."
+  }
 
+  if(travelRange.value === "many" && selectedCampuses.length < 2) {
+    output.textContent = "Dearest Comrade, it pains me to inform you of your incomplete selection in our form. At your nearest convenience, select two or more campuses."
+  }
   
   // Let the user know if they choose many campuses but didn't put a note that they need to add a note
 
