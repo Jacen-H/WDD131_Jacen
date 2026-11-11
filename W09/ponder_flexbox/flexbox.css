@@ -49,5 +49,6 @@ margin-top: 50px;
 
     .gallery-container .media-card{
         max-width: 50%;
+        align-items: center;
     }
 }
