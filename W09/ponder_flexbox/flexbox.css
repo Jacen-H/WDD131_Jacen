@@ -21,4 +21,15 @@ list-style-type: none;
 hr{
 margin-top: 50px;
 }
-              
+
+.main-nav {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
