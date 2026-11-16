@@ -72,3 +72,44 @@ const hikes = [
   }
 ];
                 
+document.querySelector('#searchButton').addEventListener("click", (e) => {
+    let searchText = document.querySelector('#search').value;
+    console.log(searchText) 
+
+    const filteredHikes = hikes.filter((hike) => {
+        return hike.name.toLowerCase().includes(searchText.toLowerCase());
+    })
+
+    console.log(filteredHikes);
+
+    const sortedHikes = filteredHikes.sort(sortHikes);
+
+    displayResults(filteredHikes);
+
+
+})
+
+function sortHikes(a, b) {
+    if(a.difficulty < b.difficulty) {
+        return -1;
+
+    } else if(a.difficulty > b.difficulty) {
+        return 1;
+    }
+    return 0;
+}
+
+function displayResults(filteredHikes) {
+    const hikeContainer = document.querySelector('#hike-container');
+    hikeContainer.innerHTML = "";
+
+    filteredHikes.forEach(hike => {
+        hikeContainer.innerHTML +=
+        <div class="hike-card">
+            <div class="hike-content">
+            <h2>${hike.name}</h2>
+            <p>${hike.description}</p>
+            </div>
+        </div>
+    })
+}
